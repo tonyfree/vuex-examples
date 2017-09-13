@@ -1,3 +1,5 @@
+## Vuex ^2.4.0
+
 ### Counter just Vue
 + 数据：data
 + 计算属性：computed
