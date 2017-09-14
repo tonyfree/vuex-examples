@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     evenOrOdd() {
-      return this.count % 2 === 0 ? 'even' : 'odd'
+      return this.count % 2 == 0 ? 'even' : 'odd'
     }
   },
   methods: {
@@ -26,20 +26,15 @@ export default {
       this.count++
     },
     decrement() {
-      this.count--
+     this.count--
     },
     incrementIfOdd() {
-      // if ((state.count + 1) % 2 === 0) {
-      //   this.increment()
-      // }
-      if (this.evenOrOdd === 'odd') {
-        // this.increment()
-        this.count++
-      }
+     if(this.evenOrOdd == 'odd') {
+       this.count++
+     }
     },
     incrementAsync() {
       setTimeout(() => {
-        // this.increment()
         this.count++
       }, 1000)
     }

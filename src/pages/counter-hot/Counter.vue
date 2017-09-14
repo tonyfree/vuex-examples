@@ -12,18 +12,15 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+
+import { mapGetters,  mapActions} from 'vuex'
 
 export default {
-  computed: mapGetters([
-    'count',
-    'recentHistory'
-  ]),
-  methods: mapActions([
-    'increment',
-    'decrement',
-    'incrementIfOdd',
-    'incrementAsync'
-  ])
+  computed: {
+    ...mapGetters(['count','recentHistory'])
+  },
+  methods: {
+    ...mapActions(['increment', 'decrement', 'incrementIfOdd','incrementAsync'])
+  }
 }
 </script>

@@ -6,35 +6,37 @@ const state = {
   count: 0
 }
 
+const getters = {
+  evenOrOdd: state => state.count % 2 == 0 ? 'even' : 'odd'
+}
+
 const mutations = {
-  increment (state) {
+  increment(state) {
     state.count++
   },
-  decrement (state) {
+  decrement(state) {
     state.count--
   },
-  incrementIfOdd (state) {
-    if ((state.count + 1) % 2 === 0) {
-      state.count++
-    }
+  incrementIfOdd(state) {
+   if( (state.count + 1) % 2 == 0) {
+    state.count++
+   }
   }
 }
 
 const actions = {
-  incrementAsync ({ commit }) {
+  incrementAsync({commit}) {
     setTimeout(() => {
       commit('increment')
     }, 1000)
   }
 }
 
-const getters = {
-  evenOrOdd: state => state.count % 2 === 0 ? 'even' : 'odd'
-}
-
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state,
   getters,
-  actions,
-  mutations
+  mutations,
+  actions
 })
+
+export default store
