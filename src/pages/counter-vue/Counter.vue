@@ -26,15 +26,20 @@ export default {
       this.count++
     },
     decrement() {
-     this.count--
+      this.count--
     },
     incrementIfOdd() {
-     if(this.evenOrOdd == 'odd') {
-       this.count++
-     }
+      // if ((state.count + 1) % 2 === 0) {
+      //   this.increment()
+      // }
+      if (this.evenOrOdd == 'odd') {
+        // this.increment()
+        this.count++
+      }
     },
     incrementAsync() {
       setTimeout(() => {
+        // this.increment()
         this.count++
       }, 1000)
     }

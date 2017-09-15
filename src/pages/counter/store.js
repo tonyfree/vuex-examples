@@ -25,8 +25,10 @@ const mutations = {
 }
 
 const actions = {
-  incrementAsync({commit}) {
+  incrementAsync({commit, state}) {
     setTimeout(() => {
+      // 严格模式下会报错
+      // state.count++
       commit('increment')
     }, 1000)
   }
@@ -36,7 +38,8 @@ const store = new Vuex.Store({
   state,
   getters,
   mutations,
-  actions
+  actions,
+  strict: process.env.NODE_ENV !== 'production'
 })
 
 export default store

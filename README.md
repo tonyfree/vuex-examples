@@ -14,8 +14,21 @@
 + 状态数据：state，唯一数据源
 + 派生状态：getters
 + 数据管理：mutations，不能直接改变 store 中的状态，更改 Vuex 的 store 中的状态的唯一方法是提交 mutatio；同步操作；不能使用派生状态
-+ 异步操作：actions，通过提交mutation来修改状态
++ 异步操作：actions，通过提交mutation来修改状态( 在严格模式下直接修改state数据会报错 )
 
 ### Counter-hot
 + 把getters统一为数据的获取出口，actions统一为数据的操作入口
 + 热重载：主要在开发环境中使用；当模块内容修改时，保留Vuex数据，重载修改模块的业务逻辑；如果不用热重载，修改模块时整体刷新，数据不再保留
+
+### Shopping Cart
++ 事件：获取商品列表，增加到购物车(涉及两个行为：商品列表页减少，购物车列表增加)，购物车列表，购买商品
++ Mutation事件类型：常量模式, mutation-types.js
++ 模块：Modules，每个模块拥有自己的state、getter、mutation、action
++ 不同模块：可以定义相同的state数据：有局部状态，命名相同的mutation会被同时触发，getters不容许有命名冲突
++ 严格模式：无论何时发生了状态变更且不是由 mutation 函数引起的，将会抛出错误，比如在actions中改变状态；只在开发环境使用
++ map辅助函数：数组形式映射，对象形式映射(别名)
++ 插件:
+
+### TodoMVC
+
+### FluxChat
